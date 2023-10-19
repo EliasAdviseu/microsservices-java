@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: pguser
+      POSTGRES_PASSWORD: pgpass
+      POSTGRES_DB: pgdb
+    ports:
+      - "5432:5432"
+
+  rabbitmq:
+    image: rabbitmq:management
+    environment:
+      RABBITMQ_DEFAULT_USER: rabbitmq_user
+      RABBITMQ_DEFAULT_PASS: rabbitmq_password
+    ports:
+      - "5672:5672"
+      - "15672:15672"
